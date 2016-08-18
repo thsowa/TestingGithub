@@ -1,58 +1,69 @@
 # TestingGithub
 ### A personal Github exercise repository
 ---
-
-
-&nbsp;
-
 * Checking if git is installed
 
 `which git`
+
 `git --version`
+
 `git help ...`
 
 * Basic git config
 
 `git config --global user.name "..."`
+
 `git config --global user.email "..."`
+
 `git config --global core.editor "vim"`
+
 `git config --global color.ui true`
+
 `git config --global credential.helper cache`
+
 `git config --global core.excludesfile ~/.gitignore_global`
 
 `git config --list`
 
+* Possible files to get to improve usability
 
+`sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-curl -o $HOME/.git-prompt.sh https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
-curl -o $HOME/.git-completion.bash https://github.com/git/git/raw/master/contrib/completion/git-completion.bash
+`curl -o $HOME/.git-prompt.sh https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh`
 
+`curl -o $HOME/.git-completion.bash https://github.com/git/git/raw/master/contrib/completion/git-completion.bash`
+
+```
 vim .bashrc --> 	if [ -f ~/.git-completion.bash ]; then
-  			   source ~/.git-completion.bash
-			fi
-			
-mkdir DIR
-touch DIR/file
-cd DIR
-git init
-git add . 	// 	git add file
-git commit -m "Message of the Commit"
+  			   		source ~/.git-completion.bash
+					fi
+```
+* Inside a repository
 
-git status	<--// check working directory
-git log 	// 	git log -n 2 	// 	git log --since=yyy-mm-dd
-							--until=
-							--author="..."
-							--grep="..."
+`git init`
 
-===============================================================
-Basic concepts:
+`git add .` 	**//** 	`git add <file>`
 
-- three-tree architecture: working / staging index / repository
-- checkout vs commit
-- SHA1 to hash changes
-- HEAD pointer to "tip" of current branch in repository
-===============================================================
+`git commit -m "Message of the Commit"`
+
+`git status`	**//** *check working directory*
+
+```
+git log	
+git log -n 2  
+git log --since=yyy-mm-dd
+		--until=
+		--author="..."
+		--grep="..."
+```
+---
+* Basic concepts:
+
+* three-tree architecture: working / staging index / repository
+* checkout vs commit
+* SHA1 to hash changes
+* Head pointer to the tip of the current branch in repository
+---
 
 git diff		<--// view changes in the working directory
 git diff --staged	<--// view changes in the staging index
